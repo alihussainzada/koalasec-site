@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+
+{% block title %}Services - KoalaSec{% endblock %}
+{% block description %}Comprehensive cybersecurity services including penetration testing, application security reviews, incident response, and security training.{% endblock %}
+
+{% block content %}
+<!-- Services Hero -->
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Our Security Services</h1>
+            <p class="page-hero-subtitle">Comprehensive cybersecurity solutions designed to protect your organization from evolving threats.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="services-detail">
+    <div class="container">
+        <div class="services-list">
+            <!-- Penetration Testing -->
+            <div class="service-item" id="penetration-testing">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <div class="service-info">
+                        <h2 class="service-title">Penetration Testing</h2>
+                        <p class="service-description">Real-world attack simulation to identify vulnerabilities before attackers do.</p>
+                    </div>
+                </div>
+                
+                <div class="service-content">
+                    <div class="service-details">
+                        <h3>What We Test</h3>
+                        <ul>
+                            <li>Web applications and APIs</li>
+                            <li>Mobile applications (iOS/Android)</li>
+                            <li>Network infrastructure</li>
+                            <li>Cloud environments</li>
+                            <li>Social engineering</li>
+                            <li>Physical security</li>
+                        </ul>
+                        
+                        <h3>Our Approach</h3>
+                        <p>We combine automated tools with manual testing techniques to simulate real-world attacks. Our reports provide actionable insights with clear remediation steps.</p>
+                        
+                        <h3>Deliverables</h3>
+                        <ul>
+                            <li>Executive summary for stakeholders</li>
+                            <li>Technical report with detailed findings</li>
+                            <li>Risk assessment and prioritization</li>
+                            <li>Remediation roadmap</li>
+                            <li>Follow-up testing and validation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('contact') }}?service=penetration-testing" class="btn btn-primary">Get Quote</a>
+                        <a href="{{ url_for('contact') }}?service=penetration-testing&type=consultation" class="btn btn-ghost">Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Application Security -->
+            <div class="service-item" id="application-security">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <div class="service-info">
+                        <h2 class="service-title">Application Security</h2>
+                        <p class="service-description">Comprehensive security review of your applications to identify and fix vulnerabilities.</p>
+                    </div>
+                </div>
+                
+                <div class="service-content">
+                    <div class="service-details">
+                        <h3>Security Review Types</h3>
+                        <ul>
+                            <li>Code security review</li>
+                            <li>Architecture security assessment</li>
+                            <li>API security testing</li>
+                            <li>Mobile app security</li>
+                            <li>Third-party component analysis</li>
+                            <li>Security configuration review</li>
+                        </ul>
+                        
+                        <h3>Methodology</h3>
+                        <p>We use industry-standard frameworks like OWASP Top 10 and combine static analysis with dynamic testing to provide comprehensive coverage.</p>
+                        
+                        <h3>Benefits</h3>
+                        <ul>
+                            <li>Early vulnerability detection</li>
+                            <li>Reduced security debt</li>
+                            <li>Compliance with security standards</li>
+                            <li>Improved development practices</li>
+                            <li>Cost-effective security improvements</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('contact') }}?service=application-security" class="btn btn-primary">Get Quote</a>
+                        <a href="{{ url_for('contact') }}?service=application-security&type=consultation" class="btn btn-ghost">Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Incident Response -->
+            <div class="service-item" id="incident-response">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <div class="service-info">
+                        <h2 class="service-title">Incident Response</h2>
+                        <p class="service-description">24/7 emergency response team to contain and recover from security incidents.</p>
+                    </div>
+                </div>
+                
+                <div class="service-content">
+                    <div class="service-details">
+                        <h3>Response Services</h3>
+                        <ul>
+                            <li>24/7 incident hotline</li>
+                            <li>Rapid response team deployment</li>
+                            <li>Threat containment and eradication</li>
+                            <li>Forensic analysis and evidence collection</li>
+                            <li>Business continuity support</li>
+                            <li>Regulatory compliance assistance</li>
+                        </ul>
+                        
+                        <h3>Response Process</h3>
+                        <p>Our incident response follows the NIST framework: Preparation, Detection & Analysis, Containment, Eradication, Recovery, and Lessons Learned.</p>
+                        
+                        <h3>Retainer Options</h3>
+                        <ul>
+                            <li>Basic: 4-hour response time</li>
+                            <li>Standard: 2-hour response time</li>
+                            <li>Premium: 1-hour response time</li>
+                            <li>Custom: Tailored to your needs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('contact') }}?service=incident-response" class="btn btn-primary">Get Quote</a>
+                        <a href="{{ url_for('contact') }}?service=incident-response&type=consultation" class="btn btn-ghost">Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security Training -->
+            <div class="service-item" id="security-training">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <div class="service-info">
+                        <h2 class="service-title">Security Training</h2>
+                        <p class="service-description">Comprehensive security awareness and technical training for your team.</p>
+                    </div>
+                </div>
+                
+                <div class="service-content">
+                    <div class="service-details">
+                        <h3>Training Programs</h3>
+                        <ul>
+                            <li>Security awareness training</li>
+                            <li>Phishing simulation exercises</li>
+                            <li>Secure coding practices</li>
+                            <li>Incident response training</li>
+                            <li>Security tool training</li>
+                            <li>Compliance training</li>
+                        </ul>
+                        
+                        <h3>Delivery Methods</h3>
+                        <p>We offer in-person, virtual, and hybrid training options. All programs include assessments, certifications, and ongoing support.</p>
+                        
+                        <h3>Customization</h3>
+                        <ul>
+                            <li>Industry-specific content</li>
+                            <li>Role-based training paths</li>
+                            <li>Integration with existing programs</li>
+                            <li>Regular content updates</li>
+                            <li>Progress tracking and reporting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('contact') }}?service=security-training" class="btn btn-primary">Get Quote</a>
+                        <a href="{{ url_for('contact') }}?service=security-training&type=consultation" class="btn btn-ghost">Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Security Process</h2>
+            <p class="section-subtitle">A proven methodology that delivers results and builds lasting security partnerships.</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Discovery</h3>
+                <p class="step-description">We start by understanding your organization, assets, and security objectives.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Assessment</h3>
+                <p class="step-description">Comprehensive security evaluation using industry best practices and tools.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Analysis</h3>
+                <p class="step-description">Deep analysis of findings with business context and risk prioritization.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Reporting</h3>
+                <p class="step-description">Clear, actionable reports for both technical and executive audiences.</p>
+            </div>
+            
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h3 class="step-title">Remediation</h3>
+                <p class="step-description">Ongoing support to implement fixes and validate security improvements.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="contact-cta">
+    <div class="container">
+        <div class="contact-cta-content">
+            <h2 class="contact-cta-title">Ready to Get Started?</h2>
+            <p class="contact-cta-subtitle">Let's discuss your security needs and create a customized solution for your organization.</p>
+            <div class="contact-cta-buttons">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">Contact Us</a>
+                <a href="{{ url_for('contact') }}?type=consultation" class="btn btn-outline btn-large">Free Consultation</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

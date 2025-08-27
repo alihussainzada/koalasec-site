@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: {{ request.url_root }}sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /data/
+
+# Allow important pages
+Allow: /services/
+Allow: /blog/
+Allow: /about/
+Allow: /contact/

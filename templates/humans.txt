@@ -1,0 +1,25 @@
+/* TEAM */
+    Founder: Alex Johnson
+    Senior Security Engineer: Sarah Martinez
+    Incident Response Specialist: David Chen
+    Security Training Lead: Lisa Wang
+
+/* SITE */
+    Last update: 2024
+    Language: English
+    Doctype: HTML5
+    IDE: Built with love and security in mind
+    Standards: HTML5, CSS3, JavaScript ES6+
+    Components: Flask, Markdown, Pygments
+    Software: Python 3.10+
+
+/* THANKS */
+    Name: Our amazing clients
+    Name: The cybersecurity community
+    Name: Open source contributors
+    Name: Security researchers worldwide
+
+/* SITE */
+    From: Cyber City, United States
+    Built for: Organizations that value security
+    Since: 2024

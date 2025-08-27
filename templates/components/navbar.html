@@ -1,0 +1,46 @@
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+        <div class="nav-content">
+            <!-- Logo -->
+            <a href="{{ url_for('home') }}" class="nav-logo" aria-label="KoalaSec Home">
+                
+                <span class="logo-text">KoalaSec</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav-links" role="menubar">
+                <a href="{{ url_for('home') }}" class="nav-link" role="menuitem">Home</a>
+                <a href="{{ url_for('services') }}" class="nav-link" role="menuitem">Services</a>
+                <a href="{{ url_for('about') }}" class="nav-link" role="menuitem">About</a>
+                <a href="{{ url_for('contact') }}" class="nav-link" role="menuitem">Contact</a>
+                <a href="{{ url_for('partners') }}" class="nav-link" role="menuitem">Partners</a>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="nav-cta">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Get Started</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <div class="mobile-menu-content">
+                <a href="{{ url_for('home') }}" class="mobile-nav-link">Home</a>
+                <a href="{{ url_for('services') }}" class="mobile-nav-link">Services</a>
+                <a href="{{ url_for('about') }}" class="mobile-nav-link">About</a>
+                <a href="{{ url_for('contact') }}" class="mobile-nav-link">Contact</a>
+                <a href="{{ url_for('partners') }}" class="mobile-nav-link">Partners</a>
+                <div class="mobile-cta">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-full">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

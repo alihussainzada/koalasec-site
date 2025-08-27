@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Our Partners - KoalaSec{% endblock %}
+{% block description %}Meet our trusted partners who help us deliver world-class cybersecurity solutions.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <div class="page-hero-content">
+            <h1 class="page-hero-title">Our Partners</h1>
+            <p class="page-hero-subtitle">We collaborate with industry leaders to provide the best security solutions for our clients.</p>
+        </div>
+    </div>
+</section>
+
+<section class="partners-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Trusted Partners</h2>
+            <p class="section-subtitle">We are proud to work with these outstanding organizations.</p>
+        </div>
+        <div class="partners-grid">
+            {% for partner in partners %}
+            <div class="partner-card">
+                <a href="{{ partner.url }}" target="_blank" rel="noopener" class="partner-logo-link">
+                    <img src="{{ partner.logo }}" alt="{{ partner.name }} logo" class="partner-logo" loading="lazy" />
+                </a>
+                <h3 class="partner-name">{{ partner.name }}</h3>
+                <p class="partner-description">{{ partner.description }}</p>
+                <a href="{{ partner.url }}" target="_blank" rel="noopener" class="partner-link">Visit Website →</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}{% endblock %}
