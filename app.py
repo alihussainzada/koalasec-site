@@ -27,6 +27,7 @@ from slugify import slugify
 from pygments import highlight
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
+import requests
 import ipaddress
 
 app = Flask(__name__)
@@ -35,6 +36,9 @@ app = Flask(__name__)
 BLOG_DIR = 'blog'
 DATA_DIR = 'data'
 MESSAGES_FILE = os.path.join(DATA_DIR, 'messages.json')
+BOT_TOKEN = "8241413726:AAG6_K6bph4jqhKKmEA6ztwrH3qSA3G8m14"
+CHAT_ID = "-1002349365359"
+TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
 # Ensure data directory exists
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -181,7 +185,24 @@ def save_contact_message(data):
             'company': data.get('company', ''),
             'message': data.get('message', '')
         }
-        
+        payload = {
+                "chat_id": CHAT_ID,
+                "parse_mode": "Markdown",
+                "text": f"""
+            *📩 New Contact Form Submission*
+
+            *🕒 Timestamp:* `{message_data['timestamp']}`
+            *🌐 IP:* `{message_data['ip']}`
+
+            *👤 Name:* `{message_data['name']}`
+            *📧 Email:* `{message_data['email']}`
+            🏢 *Company:* `{message_data['company']}`
+
+            *💬 Message:*  
+            _{message_data['message']}_
+            """
+            }
+        response = requests.post(TELEGRAM_API_URL, json=payload)
         messages.append(message_data)
         
         with open(MESSAGES_FILE, 'w') as f:
