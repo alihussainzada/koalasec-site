@@ -2689,3 +2689,105 @@ p {
         font-size: 1.1rem;
     }
 }
+
+/* Our Story Section (About Page) */
+.our-story-section {
+    padding: 3.5rem 0 2.5rem 0;
+    background: var(--bg);
+}
+.our-story-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.our-story-text {
+    flex: 1 1 340px;
+    min-width: 260px;
+}
+.our-story-description {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.1rem;
+    line-height: 1.7;
+}
+.our-story-image {
+    flex: 0 0 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+.our-story-placeholder {
+    width: 140px;
+    height: 140px;
+    background: rgba(168, 85, 247, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 16px 0 rgba(168, 85, 247, 0.10);
+}
+.our-story-placeholder svg {
+    width: 90px;
+    height: 90px;
+    color: var(--primary);
+    opacity: 0.85;
+}
+@media (max-width: 900px) {
+    .our-story-content {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+    .our-story-image {
+        align-self: center;
+    }
+}
+
+/* Certifications & Recognition Section (About Page) */
+.certs-recognition-grid {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+.certs-list, .recognition-list {
+    flex: 1 1 320px;
+    min-width: 260px;
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 16px 0 rgba(168, 85, 247, 0.08);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.certs-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.01em;
+}
+.certs-bullets {
+    list-style: disc inside;
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.7;
+    padding-left: 0.5rem;
+}
+.certs-bullets li {
+    margin-bottom: 0.7rem;
+    padding-left: 0.2rem;
+}
+.certs-bullets strong {
+    color: var(--text);
+    font-weight: 600;
+}
+@media (max-width: 900px) {
+    .certs-recognition-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

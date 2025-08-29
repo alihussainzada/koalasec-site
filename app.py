@@ -262,23 +262,25 @@ def about():
 def partners():
     partners_list = [
         {
-            'name': 'CyberTrust',
-            'logo': url_for('static', filename='img/partners/cybertrust.svg'),
-            'url': 'https://cybertrust.com',
-            'description': 'Leading provider of managed security services.'
+            'name': 'Aria Soft',
+            'logo': url_for('static', filename='img/partners/ariasoft.jpg'),
+            'url': 'https://ariasoft.com',
+            'description': '''
+            Aria Soft is a software development company specializing in web and desktop applications.
+Delivering innovative, reliable, and secure solutions for businesses and individuals.'''
         },
         {
-            'name': 'NetDefender',
+            'name': 'Sky Team',
             'logo': url_for('static', filename='img/partners/netdefender.svg'),
             'url': 'https://netdefender.com',
             'description': 'Network defense and monitoring solutions.'
         },
-        {
-            'name': 'AppShield',
-            'logo': url_for('static', filename='img/partners/appshield.svg'),
-            'url': 'https://appshield.com',
-            'description': 'Application security and code review specialists.'
-        }
+        # {
+        #     'name': 'AppShield',
+        #     'logo': url_for('static', filename='img/partners/appshield.svg'),
+        #     'url': 'https://appshield.com',
+        #     'description': 'Application security and code review specialists.'
+        # }
     ]
     return render_template('partners.html', partners=partners_list)
 
