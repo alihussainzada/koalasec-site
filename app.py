@@ -120,7 +120,7 @@ def partners():
         {
             'name': 'Aria Soft',
             'logo': url_for('static', filename='img/partners/ariasoft.jpg'),
-            'url': 'https://ariasoft.com',
+            'url': 'https://t.me/AriaSoftworks',
             'description': '''
             Aria Soft is a software development company specializing in web and desktop applications.
 Delivering innovative, reliable, and secure solutions for businesses and individuals.'''
