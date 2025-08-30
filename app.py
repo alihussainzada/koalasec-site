@@ -126,10 +126,10 @@ def partners():
 Delivering innovative, reliable, and secure solutions for businesses and individuals.'''
         },
         {
-            'name': 'Sky Team',
-            'logo': url_for('static', filename='img/partners/netdefender.svg'),
-            'url': 'https://netdefender.com',
-            'description': 'Network defense and monitoring solutions.'
+            'name': 'JS Dojo',
+            'logo': url_for('static', filename='img/partners/jsdojo.png'),
+            'url': 'https://www.jsdojo.dev',
+            'description': 'JS Dojo is a platform dedicated to web development, AI, and Web3 education. Delivering high-quality tutorials, guides, and resources to help developers grow their skills.'
         },
         # {
         #     'name': 'AppShield',
