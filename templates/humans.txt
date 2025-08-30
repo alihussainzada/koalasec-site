@@ -2,7 +2,6 @@
     Founder: Alex Johnson
     Senior Security Engineer: Sarah Martinez
     Incident Response Specialist: David Chen
-    Security Training Lead: Lisa Wang
 
 /* SITE */
     Last update: 2024

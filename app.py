@@ -9,12 +9,6 @@ Setup:
 1. pip install -r requirements.txt
 2. python app.py
 3. Visit http://127.0.0.1:5000
-
-Adding Blog Posts:
-- Create markdown files in /blog folder
-- Format: yyyy-mm-dd-title.md
-- First H1 becomes the title
-- Optional frontmatter for metadata
 """
 
 import os
@@ -111,10 +105,10 @@ def services():
     """Services page with security offerings."""
     return render_template('services.html')
 
-@app.route('/blog')
-def blog_redirect():
-    return redirect("https://blog.koalasec.co")
-
+@app.route('/blog')  
+def blog_redirect():  
+    return redirect("https://blog.koalasec.co", code=302)  
+    
 @app.route('/about')
 def about():
     """About page with team and company info."""
