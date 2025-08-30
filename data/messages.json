@@ -62,5 +62,13 @@
     "email": "ali@ali.com",
     "company": "ali",
     "message": "I'm looking for security training programs for our team. Please share details about your training offerings."
+  },
+  {
+    "timestamp": "2025-08-30T15:04:29.851569",
+    "ip": "127.0.0.1",
+    "name": "faasd",
+    "email": "alirasa13967@gmail.com",
+    "company": "dfadf",
+    "message": "I'm interested in penetration testing services for my organization. Please provide more information about your approach, timeline, and pricing."
   }
 ]

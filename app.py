@@ -40,136 +40,6 @@ BOT_TOKEN = "8241413726:AAG6_K6bph4jqhKKmEA6ztwrH3qSA3G8m14"
 CHAT_ID = "-1002349365359"
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-# Ensure data directory exists
-os.makedirs(DATA_DIR, exist_ok=True)
-
-# Initialize messages file if it doesn't exist
-if not os.path.exists(MESSAGES_FILE):
-    with open(MESSAGES_FILE, 'w') as f:
-        json.dump([], f)
-
-def get_blog_posts():
-    """Load all blog posts from the blog directory."""
-    posts = []
-    if not os.path.exists(BLOG_DIR):
-        return posts
-    
-    for filename in os.listdir(BLOG_DIR):
-        if filename.endswith('.md'):
-            filepath = os.path.join(BLOG_DIR, filename)
-            with open(filepath, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Extract metadata from filename
-            date_str = filename[:10]  # yyyy-mm-dd
-            slug = filename[11:-3]  # title part
-            
-            # Parse content for title and summary
-            lines = content.split('\n')
-            title = slug.replace('-', ' ').title()
-            summary = ""
-            
-            # Look for first H1 or H2 for title
-            for line in lines:
-                if line.startswith('# '):
-                    title = line[2:].strip()
-                    break
-                elif line.startswith('## '):
-                    title = line[3:].strip()
-                    break
-            
-            # Generate summary from first paragraph
-            for line in lines:
-                if line.strip() and not line.startswith('#') and not line.startswith('---'):
-                    summary = line.strip()[:150] + "..." if len(line.strip()) > 150 else line.strip()
-                    break
-            
-            # Calculate reading time (200 wpm)
-            word_count = len(content.split())
-            reading_time = max(1, round(word_count / 200))
-            
-            posts.append({
-                'slug': slug,
-                'title': title,
-                'date': date_str,
-                'summary': summary,
-                'reading_time': reading_time,
-                'filename': filename
-            })
-    
-    # Sort by date (newest first)
-    posts.sort(key=lambda x: x['date'], reverse=True)
-    return posts
-
-def get_blog_post(slug):
-    """Load a specific blog post by slug."""
-    filename = None
-    for post in get_blog_posts():
-        if post['slug'] == slug:
-            filename = post['filename']
-            break
-    
-    if not filename:
-        return None
-    
-    filepath = os.path.join(BLOG_DIR, filename)
-    with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
-    
-    # Parse frontmatter if present
-    frontmatter = {}
-    if content.startswith('---'):
-        parts = content.split('---', 2)
-        if len(parts) >= 3:
-            try:
-                import yaml
-                frontmatter = yaml.safe_load(parts[1]) or {}
-            except ImportError:
-                # Simple frontmatter parsing without yaml
-                for line in parts[1].strip().split('\n'):
-                    if ':' in line:
-                        key, value = line.split(':', 1)
-                        frontmatter[key.strip()] = value.strip()
-            content = parts[2].strip()
-    
-    # Convert markdown to HTML
-    md = markdown.Markdown(
-        extensions=['codehilite', 'fenced_code', 'tables', 'toc'],
-        extension_configs={
-            'codehilite': {
-                'css_class': 'highlight',
-                'use_pygments': True,
-                'noclasses': True,
-            }
-        }
-    )
-    
-    html_content = md.convert(content)
-    
-    # Generate table of contents from headings
-    toc = []
-    for line in html_content.split('\n'):
-        if line.startswith('<h'):
-            level = int(line[2])
-            text = re.search(r'<h\d[^>]*>(.*?)</h\d>', line)
-            if text:
-                heading_text = text.group(1)
-                heading_id = slugify(heading_text)
-                toc.append({
-                    'level': level,
-                    'text': heading_text,
-                    'id': heading_id
-                })
-    
-    return {
-        'slug': slug,
-        'title': frontmatter.get('title', slug.replace('-', ' ').title()),
-        'date': frontmatter.get('date', ''),
-        'content': html_content,
-        'toc': toc,
-        'reading_time': max(1, round(len(content.split()) / 200))
-    }
-
 def save_contact_message(data):
     """Save contact form message to JSON file."""
     try:
@@ -242,16 +112,8 @@ def services():
     return render_template('services.html')
 
 @app.route('/blog')
-def blog():
-    """Blog listing page."""
-    posts = get_blog_posts()
-    return render_template('blog.html', posts=posts)
-
-    """Individual blog post page."""
-    post = get_blog_post(slug)
-    if not post:
-        abort(404)
-    return render_template('post.html', post=post)
+def blog_redirect():
+    return redirect("https://blog.koalasec.co")
 
 @app.route('/about')
 def about():
