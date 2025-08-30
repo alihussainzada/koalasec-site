@@ -1959,7 +1959,6 @@ p {
 }
 
 .faq-question::after {
-    content: '+';
     font-size: 1.5rem;
     color: var(--primary);
     transition: transform var(--transition);
@@ -2789,5 +2788,32 @@ p {
     .certs-recognition-grid {
         flex-direction: column;
         gap: 1.5rem;
+    }
+}
+
+.mission-logo-match {
+    width: 140px;
+    height: 140px;
+    background: rgba(168, 85, 247, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 16px 0 rgba(168, 85, 247, 0.10);
+}
+.mission-logo-match svg {
+    width: 90px;
+    height: 90px;
+    color: var(--primary);
+    opacity: 0.85;
+}
+@media (max-width: 900px) {
+    .mission-logo-match {
+        width: 90px;
+        height: 90px;
+    }
+    .mission-logo-match svg {
+        width: 56px;
+        height: 56px;
     }
 }

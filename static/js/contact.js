@@ -203,17 +203,30 @@ document.addEventListener('input', function(event) {
 // Phone number formatting
 document.addEventListener('input', function(event) {
     if (event.target.type === 'tel') {
-        const value = event.target.value.replace(/\D/g, '');
+        let value = event.target.value.replace(/\D/g, ''); // keep only numbers
         let formatted = '';
-        
-        if (value.length > 0) {
-            formatted = '+1 (';
-            if (value.length > 0) formatted += value.substring(0, 3);
-            if (value.length > 3) formatted += ') ' + value.substring(3, 6);
-            if (value.length > 6) formatted += '-' + value.substring(6, 10);
+
+        // always start with country code if typed
+        if (value.startsWith('93')) {
+            formatted = '+93 ';
+            value = value.substring(2);
+        } else if (value.startsWith('0')) {
+            // if user starts with 0, treat as local and add +93 automatically
+            formatted = '+93 ';
+            value = value.substring(1);
         }
-        
-        event.target.value = formatted;
+
+        if (value.length > 0) {
+            formatted += value.substring(0, 2); // operator code
+        }
+        if (value.length > 2) {
+            formatted += ' ' + value.substring(2, 5);
+        }
+        if (value.length > 5) {
+            formatted += ' ' + value.substring(5, 9);
+        }
+
+        event.target.value = formatted.trim();
     }
 });
 
@@ -225,7 +238,6 @@ document.addEventListener('change', function(event) {
             const serviceTemplates = {
                 'penetration-testing': 'I\'m interested in penetration testing services for my organization. Please provide more information about your approach, timeline, and pricing.',
                 'application-security': 'I\'d like to discuss application security review services. We have web/mobile applications that need security assessment.',
-                'incident-response': 'I need information about your incident response services and retainer options.',
                 'security-training': 'I\'m looking for security training programs for our team. Please share details about your training offerings.'
             };
             
