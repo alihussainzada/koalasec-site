@@ -1994,6 +1994,11 @@ p {
     transform: rotate(180deg);
 }
 
+/* when expanded, rotate arrow up */
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+}
+
 /* Responsive Contact */
 @media (max-width: 768px) {
     .contact-wrapper {
